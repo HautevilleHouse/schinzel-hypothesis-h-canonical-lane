@@ -10,9 +10,9 @@ python3 scripts/extract_constants.py           --inputs artifacts/constants_extr
 
 python3 scripts/promote_constants.py           --extracted artifacts/constants_extracted.json           --registry artifacts/constants_registry.json           --stitch artifacts/stitch_constants.json           --report artifacts/promotion_report.json
 
-mkdir -p .repro_tmp/schinzel_hypothesis_h
-cp artifacts/stitch_constants.json .repro_tmp/schinzel_hypothesis_h/stitch_constants.json
-cp artifacts/constants_registry.json .repro_tmp/schinzel_hypothesis_h/constants_registry.json
+mkdir -p .tmp/schinzel_hypothesis_h
+cp artifacts/stitch_constants.json .tmp/schinzel_hypothesis_h/stitch_constants.json
+cp artifacts/constants_registry.json .tmp/schinzel_hypothesis_h/constants_registry.json
 
 python3 scripts/shh_closure_guard.py           --strict-coh-zero           --registry artifacts/constants_registry.json           --stitch artifacts/stitch_constants.json           --out repro/certificate_runtime.json           --history repro/drift_guard_runs.jsonl           --pretty
 
